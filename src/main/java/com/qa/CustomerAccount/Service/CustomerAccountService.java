@@ -1,5 +1,16 @@
 package com.qa.CustomerAccount.Service;
 
-public class CustomerAccountService {
+import com.qa.CustomerAccount.Domain.CustomerAccount;
+
+//This class will contain the crud functionality 
+// It will also be an interface, classes that implement this class
+// will have to create the methods below
+
+public interface CustomerAccountService {
+	
+	
+	CustomerAccount createAccount(CustomerAccount newAccount);
+	
+	
 
 }

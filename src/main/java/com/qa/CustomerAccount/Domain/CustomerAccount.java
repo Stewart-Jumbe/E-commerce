@@ -16,13 +16,24 @@ public class CustomerAccount {
 		super();
 	}
 	
-	//used for returning information from the database
+	
+	//Constructor for creating a customer account
+	public CustomerAccount(String name, String email, LocalDateTime doB) {
+		super();
+		this.name = name;
+		this.email = email;
+		DoB = doB;
+	}
+
+
+	//Constructor used for returning information from the database
 	public CustomerAccount(Integer id, String name, String email, LocalDateTime doB) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		DoB = doB;
+		
 	//Getters and Setters are neccessary for the the DB to work
 		
 	}
