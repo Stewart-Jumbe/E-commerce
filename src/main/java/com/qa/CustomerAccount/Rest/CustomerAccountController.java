@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,7 +42,7 @@ public class CustomerAccountController {
 	@PostMapping("/create")// post request to create customer account
 	public ResponseEntity<CustomerAccount> createCustomerAccount(@RequestBody CustomerAccount newCustomerAccount){
 		CustomerAccount responseBody = this.service.createCustomerAccount(newCustomerAccount);
-		return new ResponseEntity<CustomerAccount>(responseBody,HttpStatus.CREATED);
+		return new ResponseEntity<CustomerAccount>(responseBody,HttpStatus.CREATED); // code= 201
 	}
 	
 	
@@ -65,11 +66,22 @@ public class CustomerAccountController {
 	public ResponseEntity<CustomerAccount> updateCustomerAccount(@PathVariable Integer id, @RequestBody CustomerAccount newAccount) {
 		System.out.println("Replacing Customer Account with id " + id + "with " + newAccount);
 		CustomerAccount body = this.service.replaceCustomerAccountInfo(id, newAccount);
-		return new ResponseEntity<CustomerAccount> (body, HttpStatus.ACCEPTED);
-		
-		
+		return new ResponseEntity<CustomerAccount> (body, HttpStatus.ACCEPTED); // code= 202
 	}
 	
+	
+	//Method to delete a customerAccount by using an ID
+	@DeleteMapping("/remove/{id}")
+	public ResponseEntity<?> removeCustomerAccount(@PathVariable Integer id){
+		System.out.println("Removing customer account with id "+ id);
+		boolean removed = this.service.removeCustomerAccount(id); // will return true or false
+				if(removed) {
+					return new ResponseEntity<>(HttpStatus.NO_CONTENT); //code = 204 
+			}	else {
+					return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // code = 500 
+			}
+		
+	}
 	
 	
 
