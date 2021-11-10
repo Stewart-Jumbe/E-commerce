@@ -23,7 +23,8 @@ public interface CustomerAccountService {
 	//UPDATE
 	CustomerAccount replaceCustomerAccountInfo(Integer id, CustomerAccount updateAccount);
 	
-	
+	//DELETE
+	boolean removeCustomerAccount(Integer id);
 	
 	
 	

@@ -75,5 +75,13 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 		return this.repo.save(existingAccount) ;
 	}
 
+
+
+	@Override
+	public boolean removeCustomerAccount(Integer id) {
+		this.repo.deleteById(id); //deleting customer account by id
+		return !this.repo.existsById(id) ;//true will be returned if id is no longer present in the DB
+	}
+
 	
 }
