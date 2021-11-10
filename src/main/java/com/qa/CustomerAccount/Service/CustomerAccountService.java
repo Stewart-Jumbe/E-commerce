@@ -13,12 +13,19 @@ import com.qa.CustomerAccount.Domain.CustomerAccount;
 
 public interface CustomerAccountService {
 	
-	//Create
+	//CREATE - method to create customer account information
 	CustomerAccount createCustomerAccount(CustomerAccount newAccount);
 	
+	//READ- methods to read customer account information
 	List<CustomerAccount> getAllCustomerAccounts();
-	
 	CustomerAccount getCustomerAccount(Integer id);
+	
+	//UPDATE
+	CustomerAccount replaceCustomerAccountInfo(Integer id, CustomerAccount updateAccount);
+	
+	
+	
+	
 	
 
 }

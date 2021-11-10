@@ -60,5 +60,20 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 		return this.repo.findAll(); //all customer account information will be returned as a list
 	}
 
+
+
+	@Override
+	public CustomerAccount replaceCustomerAccountInfo(Integer id, CustomerAccount updateAccount) {
+		CustomerAccount existingAccount = this.getCustomerAccount(id); //getting customer account to update
+		//and assigning it to existing account variable
+		
+		//updating Name,email and DoB
+		existingAccount.setName(updateAccount.getName());
+		existingAccount.setEmail(updateAccount.getEmail());
+		existingAccount.setDoB(updateAccount.getDoB());
+		
+		return this.repo.save(existingAccount) ;
+	}
+
 	
 }

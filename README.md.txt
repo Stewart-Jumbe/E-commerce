@@ -6,7 +6,7 @@
 6.CustomerAccountController class populated with annotation for get request to check that server is working
 7.Made CustomerAccountService into an interface to contain methods that must be deployed to classes that implement it, 
 such as CustomerAccountServiceDB (which handles DB interactions)
-8.Populated CustomerAccountRepo
+8.Populated CustomerAccountRepo class which is inherits the methods in JpaRepository
 
 //Create (on create_feature branch)
 9.Adding create functionality to CustomerAccountService and implemented the method in CustomerAccountServiceDB,Post request added to CustomerAccountController class

@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -58,6 +59,16 @@ public class CustomerAccountController {
 		return this.service.getCustomerAccount(id);
 	}
 	
+	
+	//Method to Update a CustomerAccount by using an ID
+	@PutMapping("/replace/{id}")
+	public ResponseEntity<CustomerAccount> updateCustomerAccount(@PathVariable Integer id, @RequestBody CustomerAccount newAccount) {
+		System.out.println("Replacing Customer Account with id " + id + "with " + newAccount);
+		CustomerAccount body = this.service.replaceCustomerAccountInfo(id, newAccount);
+		return new ResponseEntity<CustomerAccount> (body, HttpStatus.ACCEPTED);
+		
+		
+	}
 	
 	
 	
