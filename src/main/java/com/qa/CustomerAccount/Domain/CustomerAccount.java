@@ -1,14 +1,24 @@
 package com.qa.CustomerAccount.Domain;
 
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class CustomerAccount {
 
 	//Attributes
-	private Integer id; // to be used by database
+	
+	@Id // tells Spring this is the PK
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT
+	private Integer id;// to be used by database
+
+	
+	
 	private String name; // takes in first and last name "John Smith"
 	private String email; 
-	private LocalDateTime DoB;
+	private String DoB;
 	//Constructors
 	
 	//Default constructor, to allow you to create a blank object
@@ -18,7 +28,7 @@ public class CustomerAccount {
 	
 	
 	//Constructor for creating a customer account
-	public CustomerAccount(String name, String email, LocalDateTime doB) {
+	public CustomerAccount(String name, String email, String doB) {
 		super();
 		this.name = name;
 		this.email = email;
@@ -27,7 +37,7 @@ public class CustomerAccount {
 
 
 	//Constructor used for returning information from the database
-	public CustomerAccount(Integer id, String name, String email, LocalDateTime doB) {
+	public CustomerAccount(Integer id, String name, String email, String doB) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -62,11 +72,11 @@ public class CustomerAccount {
 		this.email = email;
 	}
 
-	public LocalDateTime getDoB() {
+	public String getDoB() {
 		return DoB;
 	}
 
-	public void setDoB(LocalDateTime doB) {
+	public void setDoB(String doB) {
 		DoB = doB;
 	}
 

@@ -1,5 +1,7 @@
 package com.qa.CustomerAccount.Service;
 
+
+
 import com.qa.CustomerAccount.Domain.CustomerAccount;
 
 //This class will contain the crud functionality 
@@ -8,8 +10,9 @@ import com.qa.CustomerAccount.Domain.CustomerAccount;
 
 public interface CustomerAccountService {
 	
-	
+	//Create
 	CustomerAccount createAccount(CustomerAccount newAccount);
+	
 	
 	
 
