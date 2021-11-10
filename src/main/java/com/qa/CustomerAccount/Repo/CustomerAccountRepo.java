@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.qa.CustomerAccount.Domain.CustomerAccount;
 
-@Repository
+@Repository //indicates that HumanRepo will be used as a repository for our database
 public interface CustomerAccountRepo extends JpaRepository<CustomerAccount, Integer> {
 
 }
