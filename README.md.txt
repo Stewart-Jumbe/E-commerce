@@ -29,3 +29,8 @@ postman entry: localhost:8080/customeraccount/create
 15. Added Update functionality to CustomerAccountService and implemented method in CustomerAccountServiceDB, Put request with ReponseEntity added to Controller
 16.Created a series of customer accounts (in postman)
 17.Updated a specic customer account using a customer id
+
+//Delete (on delete_feature branch)
+18. Added DELETE functionality to CustomerAccountService and implemented method in CustomerAccountServiceDB, Delete request with ReponseEntity added to Controller
+19.Created a series of customer accounts (in postman)
+20.Deleted a specic customer account using a customer id
