@@ -11,9 +11,21 @@ such as CustomerAccountServiceDB (which handles DB interactions)
 //Create (on create_feature branch)
 9.Adding create functionality to CustomerAccountService and implemented the method in CustomerAccountServiceDB,Post request added to CustomerAccountController class
 10.Created a customer account, with name, email and dob in postman
+postman entry: localhost:8080/customeraccount/create
+
+{
+	"name":"John Smith"
+	"email":"J.Smith@yahoo.com"
+	"dob" : "2000-01-11"
+}
 
 //Read (on read_feature branch)
 11.Added Read functionality to CustomerAccountService and implemented the methods in CustomerAccountServiceDB, Get request with ResponseEntity added to Controller
-12.Created a series of customer accounts
-13. Read all of the customer account information by using localhost:8080/customeraccount/getall in Postman
+12. Created a series of customer accounts (in postman)
+13. Read all of the customer account information by using localhost:8080/customeraccount/getall in Postma
 14. Read a specific customer acount using a customer id
+
+//Update (on update_feature branch)
+15. Added Update functionality to CustomerAccountService and implemented method in CustomerAccountServiceDB, Put request with ReponseEntity added to Controller
+16.Created a series of customer accounts (in postman)
+17.Updated a specic customer account using a customer id
