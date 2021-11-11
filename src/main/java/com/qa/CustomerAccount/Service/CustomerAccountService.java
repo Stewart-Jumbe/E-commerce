@@ -6,7 +6,7 @@ import java.util.List;
 
 import com.qa.CustomerAccount.Domain.CustomerAccount;
 
-
+//This class handles the business logic
 //This class will contain the crud functionality 
 // It will also be an interface, classes that implement this class
 // will have to create the methods below

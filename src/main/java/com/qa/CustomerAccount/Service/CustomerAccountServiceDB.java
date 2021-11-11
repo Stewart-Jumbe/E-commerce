@@ -14,18 +14,20 @@ import com.qa.CustomerAccount.Repo.CustomerAccountRepo;
 
 @Service
 public class CustomerAccountServiceDB implements CustomerAccountService{
-
+	//This class handles the business logic
+	//This class contains the crud functionality 
+	
 	
 	private CustomerAccountRepo repo; //creating repo variable
 	
-	//Constructor
+	//Constructor- Injecting repo into CustomerAccountServiceDB
 	public CustomerAccountServiceDB(CustomerAccountRepo repo) {
 		super();
 		this.repo = repo;
 	}
 
 
-
+	// CREATE
 	@Override
 	public CustomerAccount createCustomerAccount(CustomerAccount newAccount) {
 	
@@ -33,8 +35,7 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 	}
 
 	
-
-	
+	//READ
 	@Override
 	public CustomerAccount getCustomerAccount(Integer id) {
 	
@@ -47,21 +48,18 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 			CustomerAccount foundCustomerAcc = CustomerAccountOptional.get();
 			return foundCustomerAcc;
 	}else {	
-			throw new EntityNotFoundException("No Customer Account wiht id " +id + "found");
-	}	
-		
-
+			throw new EntityNotFoundException("No Customer Account with id " +id + "found");
+			}	
 	}
 
-
-
+	//READ
 	@Override
 	public List<CustomerAccount> getAllCustomerAccounts() {
 		return this.repo.findAll(); //all customer account information will be returned as a list
 	}
 
 
-
+	//UPDATE
 	@Override
 	public CustomerAccount replaceCustomerAccountInfo(Integer id, CustomerAccount updateAccount) {
 		CustomerAccount existingAccount = this.getCustomerAccount(id); //getting customer account to update
@@ -76,7 +74,7 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 	}
 
 
-
+	//DELETE
 	@Override
 	public boolean removeCustomerAccount(Integer id) {
 		this.repo.deleteById(id); //deleting customer account by id

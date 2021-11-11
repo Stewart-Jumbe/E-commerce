@@ -20,10 +20,13 @@ import com.qa.CustomerAccount.Service.CustomerAccountService;
 @RestController // this enables request handling
 @RequestMapping ("/customeraccount")// requests must include /customercount in the url
 public class CustomerAccountController {
+
+	//This Class is responsible communicating with the front end, it handling endpoints (@requestMapping), receive and sends requests, in addition to handling responses 
 	
 	private CustomerAccountService service;
 	
 	//Constructor with injection of service into CustomerAccountController
+	// This controller class is resposible for calling the methods in the CustomerAccountService class
 	//@Autowired
 	public CustomerAccountController(CustomerAccountService service) {
 		super();

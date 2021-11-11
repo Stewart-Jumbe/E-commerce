@@ -5,20 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity //to automatically create CustomerAccount table in h2 DB, @Entity tells spring its a table
 public class CustomerAccount {
 
 	//Attributes
 	
-	@Id // tells Spring this is the PK
+	@Id // tells Spring this is the Primary Key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT
 	private Integer id;// to be used by database
-
-	
 	
 	private String name; // takes in first and last name "John Smith"
 	private String email; 
 	private String DoB;
+
 	//Constructors
 	
 	//Default constructor, to allow you to create a blank object
