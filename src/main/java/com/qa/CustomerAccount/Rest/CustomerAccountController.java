@@ -33,7 +33,7 @@ public class CustomerAccountController {
 		this.service = service;
 	}
 
-
+	
 	//using get request to return text at locolhost/customeraccount/8080/working
 	//checking if local server is working
 	@GetMapping("/working")
@@ -41,6 +41,7 @@ public class CustomerAccountController {
 		return "Its all working";
 	}
 	
+	//CREATE
 	//Method to create customer account
 	@PostMapping("/create")// post request to create customer account
 	public ResponseEntity<CustomerAccount> createCustomerAccount(@RequestBody CustomerAccount newCustomerAccount){
@@ -48,19 +49,21 @@ public class CustomerAccountController {
 		return new ResponseEntity<CustomerAccount>(responseBody,HttpStatus.CREATED); // code= 201
 	}
 	
-	
+	//READ
 	//Method to Read All Customer Account information
 	@GetMapping("/getall")
 	public ResponseEntity<List<CustomerAccount>> getCustomerAccountInfo(){
-		
 		return ResponseEntity.ok(this.service.getAllCustomerAccounts()); //DELETE THIS LATER AS GET DOESNT NEED A RESPONSEENTITY
 		
 	}
 	
+	
+	//READ
 	//Method to read specif CustomerAccount information by ID
 	@GetMapping("/get/{id}")// Getting CustomerAccount information with id
-	public CustomerAccount getCustomerAccountByID(@PathVariable Integer id) {
-		return this.service.getCustomerAccount(id);
+	public ResponseEntity<CustomerAccount> getCustomerAccountByID(@PathVariable Integer id) {
+		CustomerAccount responseBody = this.service.getCustomerAccount(id);
+		return new ResponseEntity<CustomerAccount>(responseBody, HttpStatus.OK);
 	}
 	
 	

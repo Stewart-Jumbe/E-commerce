@@ -48,7 +48,7 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 			CustomerAccount foundCustomerAcc = CustomerAccountOptional.get();
 			return foundCustomerAcc;
 	}else {	
-			throw new EntityNotFoundException("No Customer Account with id " +id + "found");
+			throw new EntityNotFoundException("No Customer Account with id " +id + " found");
 			}	
 	}
 
