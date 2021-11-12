@@ -42,9 +42,7 @@ public class CustomerAccount {
 		this.name = name;
 		this.email = email;
 		DoB = doB;
-		
-	//Getters and Setters are neccessary for the the DB to work
-		
+	
 	}
 
 	public Integer getId() {
