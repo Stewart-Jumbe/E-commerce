@@ -6,7 +6,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")//setting profile to 'test'
-class DemoApplicationTests {
+class EcommerceApplicationTests {
 
 	@Test
 	void contextLoads() {
