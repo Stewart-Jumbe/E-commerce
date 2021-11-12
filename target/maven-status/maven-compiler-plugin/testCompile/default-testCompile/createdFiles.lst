@@ -1,0 +1,4 @@
+com\qa\CustomerAccount\Domain\CustomerAccountUnitTest.class
+com\qa\CustomerAccount\rest\CustomerAccountIntegrationTest.class
+com\qa\CustomerAccount\Service\CustomerAccountServiceDBUnitTest.class
+com\qa\CustomerAccount\EcommerceApplicationTests.class

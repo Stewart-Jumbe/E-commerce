@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.qa.CustomerAccount.rest.CustomerAccountIntegrationTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.028 s - in com.qa.CustomerAccount.rest.CustomerAccountIntegrationTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.331 s - in com.qa.CustomerAccount.rest.CustomerAccountIntegrationTest
