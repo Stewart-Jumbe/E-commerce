@@ -1,0 +1,6 @@
+com\qa\CustomerAccount\EcommerceApp.class
+com\qa\CustomerAccount\Repo\CustomerAccountRepo.class
+com\qa\CustomerAccount\Service\CustomerAccountServiceDB.class
+com\qa\CustomerAccount\Rest\CustomerAccountController.class
+com\qa\CustomerAccount\Service\CustomerAccountService.class
+com\qa\CustomerAccount\Domain\CustomerAccount.class
