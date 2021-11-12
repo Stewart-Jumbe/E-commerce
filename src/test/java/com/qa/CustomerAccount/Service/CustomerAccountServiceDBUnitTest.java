@@ -16,20 +16,23 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.qa.CustomerAccount.Domain.CustomerAccount;
 import com.qa.CustomerAccount.Repo.CustomerAccountRepo;
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT) //Load application context for application when test is run
 class CustomerAccountServiceDBUnitTest {
 
 	@Autowired // injecting serviceDB
 	private CustomerAccountServiceDB service;
 	
-	@MockBean //injecting repo to mock interaction with our repo
+	//Creating a mock version of the repo class and injecting it
+	//Mockito will mock the responses given by the CustomerAccountRepo
+	@MockBean 
 	private CustomerAccountRepo repo;
 	
 	
 	private final Integer id = 1;
 	
 	
-	
+	//GIVEN -->WHEN --> THEN : given testing data, when we test a particular method,
+	//then check that the output of the method matches our testing data
 	
 	@Test //Testing CREATE Method
 	void testCreateCustomerAccountMeth() {
@@ -108,13 +111,19 @@ class CustomerAccountServiceDBUnitTest {
 		Integer id = 1;
 		CustomerAccount newAccount = new CustomerAccount(1,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
 		CustomerAccount existingAccount = new CustomerAccount(id,"Random Lee","Random.Lee@gone.com","2070-11-11");
-		CustomerAccount updatedAccount = new CustomerAccount(id,newAccount.getName(),newAccount.getEmail(), newAccount.getDoB());
+		CustomerAccount updatedAccount = new CustomerAccount(id,
+															newAccount.getName(),
+															newAccount.getEmail(), 
+															newAccount.getDoB());
 		
+		System.out.println("This is the updated account: "+ updatedAccount);
 		//WHEN
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(existingAccount));
 		Mockito.when(this.repo.save(updatedAccount)).thenReturn(updatedAccount);
-		CustomerAccount testAccount = this.service.replaceCustomerAccountInfo(id, newAccount);
+		
+		CustomerAccount testAccount = this.service.replaceCustomerAccountInfo(id, newAccount); //replaceCustomerAccountInfo method is returning null
 		System.out.println("This is the test account: " + testAccount);
+		
 		//THEN
 		Assertions.assertThat(testAccount).isEqualTo(updatedAccount);
 		
