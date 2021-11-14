@@ -82,7 +82,7 @@ As this project focused on developing the back-end, users of the app can use Pos
 
 ## Jira
 
-Jira was used to manage this project, my Jira board can be accessed [here](https://sjumbe.atlassian.net/jira/software/projects/MUS/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiNDU1ODZhN2YzMjgxNDFmMjhmNDc3NWY2NDk5YjJkZGUiLCJwIjoiaiJ9)
+Jira was used to manage this project, my Jira board can be accessed [here](https://sjumbe.atlassian.net/jira/software/projects/MUS/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiNDU1ODZhN2YzMjgxNDFmMjhmNDc3NWY2NDk5YjJkZGUiLCJwIjoiaiJ9), a project risk asssessment can be found on the board. 
 
 ## Installation
 
