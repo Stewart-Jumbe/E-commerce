@@ -2,6 +2,20 @@
 <br /> 
 <br /> 
 
+
+## Project Overview
+
+This repository contains the final project for QA Academy bootcamp and Software Development program. <br>
+The e-commerce application created has full crud functionality, handles HTTP request and connects to a persistent relational database.
+It encapsulates concepts from all core modules:
+* Agile & Project Management (Git, Jira)
+
+* Databases & Cloud Fundamentals (H2, MySQL)
+* Programming Fundamentals (Java)
+* API Development (Spring Boot)
+* Automated Testing (JUnit,Mockito)
+
+
 ### Scope <br /> 
 <br /> 
   
@@ -66,6 +80,9 @@ The e-commerce app has CRUD functionality which allows the user to do the follow
 
 As this project focused on developing the back-end, users of the app can use Postman which simulates the fuctionality of a front-end.
 
+## Jira
+
+Jira was used to manage this project, my Jira board can be accessed [here](https://sjumbe.atlassian.net/jira/software/projects/MUS/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiNDU1ODZhN2YzMjgxNDFmMjhmNDc3NWY2NDk5YjJkZGUiLCJwIjoiaiJ9)
 
 ## Installation
 
