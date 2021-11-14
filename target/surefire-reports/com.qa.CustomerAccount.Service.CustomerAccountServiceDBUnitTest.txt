@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.qa.CustomerAccount.Service.CustomerAccountServiceDBUnitTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 2.04 s - in com.qa.CustomerAccount.Service.CustomerAccountServiceDBUnitTest
