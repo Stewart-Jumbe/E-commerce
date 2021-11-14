@@ -52,3 +52,19 @@ I would like to add the following functionality in the future:
 * Add more logic and custom exceptions to the setters, to ensure users provide the correct data, and to provide more specific messaged for incorrectly entered data.<br /> 
 * An Inventory Class which would allow users to add items they would like to sell.<br /> 
 <br /> 
+<br /> 
+## API Functionality<br />  
+<br /> 
+The e-commerce app has CRUD functionality which allows the user to do the following:
+* Create a new customer account<br />
+* Dislay all of the customer accounts<br />
+* Display a specific customer account (using the customer ID)<br />
+* Update a customer account<br />
+* Remove a customer account<br />
+
+As this project focused on developing the back-end, users of the app can use Postman which simulates the fuctionality of a front-end.
+
+## Illustration of CRUD functionality in Postman
+
+### Creating a new customer account
+
