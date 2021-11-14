@@ -70,7 +70,7 @@ public class CustomerAccountController {
 	//Method to Update a CustomerAccount by using an ID
 	@PutMapping("/replace/{id}")
 	public ResponseEntity<CustomerAccount> updateCustomerAccount(@PathVariable Integer id, @RequestBody CustomerAccount newAccount) {
-		System.out.println("Replacing Customer Account with id " + id + "with " + newAccount);
+		System.out.println("Replacing Customer Account with id " + id + " with " + newAccount);
 		CustomerAccount body = this.service.replaceCustomerAccountInfo(id, newAccount);
 		return new ResponseEntity<CustomerAccount> (body, HttpStatus.ACCEPTED); // code= 202
 	}

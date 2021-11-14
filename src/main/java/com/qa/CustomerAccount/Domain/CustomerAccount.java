@@ -16,7 +16,9 @@ public class CustomerAccount {
 	
 	private String name; // takes in first and last name "John Smith"
 	private String email; 
-	private String DoB;
+	private String dob;
+	private String address;
+	private String postcode;
 
 	//Constructors
 	
@@ -26,24 +28,27 @@ public class CustomerAccount {
 	}
 	
 	
-	//Constructor for creating a customer account
-	public CustomerAccount(String name, String email, String doB) {
-		super();
-		this.name = name;
-		this.email = email;
-		DoB = doB;
-	}
-
-
-	//Constructor used for returning information from the database
-	public CustomerAccount(Integer id, String name, String email, String doB) {
+	//Constructor with all attributes, for returning information from the database
+	public CustomerAccount(Integer id, String name, String email, String dob, String address, String postcode) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		DoB = doB;
-	
+		this.dob = dob;
+		this.address = address;
+		this.postcode = postcode;
 	}
+	
+	//Constructor without id
+		public CustomerAccount(String name, String email, String dob, String address, String postcode) {
+			super();
+			this.name = name;
+			this.email = email;
+			this.dob = dob;
+			this.address = address;
+			this.postcode = postcode;
+		}
+
 
 	public Integer getId() {
 		return id;
@@ -69,19 +74,41 @@ public class CustomerAccount {
 		this.email = email;
 	}
 
-	public String getDoB() {
-		return DoB;
+	public String getDob() {
+		return dob;
 	}
 
-	public void setDoB(String doB) {
-		DoB = doB;
+	public void setDob(String doB) {
+		dob = doB;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
 	}
 
 	// To String
 	@Override
 	public String toString() {
-		return "CustomerAccount [id=" + id + ", name=" + name + ", email=" + email + ", DoB=" + DoB + "]";
+		return "CustomerAccount [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", address="
+				+ address + ", postcode=" + postcode + "]";
 	}
+
 
 	
 	
