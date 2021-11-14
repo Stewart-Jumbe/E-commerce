@@ -52,3 +52,54 @@ I would like to add the following functionality in the future:
 * Add more logic and custom exceptions to the setters, to ensure users provide the correct data, and to provide more specific messaged for incorrectly entered data.<br /> 
 * An Inventory Class which would allow users to add items they would like to sell.<br /> 
 <br /> 
+<br /> 
+
+## API Functionality<br />  
+<br /> 
+
+The e-commerce app has CRUD functionality which allows the user to do the following:
+* Create a new customer account<br />
+* Dislay all of the customer accounts<br />
+* Display a specific customer account (using the customer ID)<br />
+* Update a customer account<br />
+* Remove a customer account<br />
+
+As this project focused on developing the back-end, users of the app can use Postman which simulates the fuctionality of a front-end.
+
+
+## Installation
+
+The default port for connecting Postman for locolhost requests is `port:8081`, communication to MySQL database is on `port:3306`.
+
+A database called customeraccountdb with a table called customer_account must first be created using the instructions below, before the e-commerce application is run.
+
+The following SQL query can be run in MySQL to create a new database and table:
+
+```
+CREATE DATABASE customeraccountdb;
+
+USE customeraccountdb;
+
+CREATE TABLE `customer_account`(
+    id INTEGER AUTO_INCREMENT,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    dob VARCHAR(255),
+    address VARCHAR(255),
+    postcode VARCHAR(255),
+    PRIMARY KEY (id)
+);
+```
+ 
+## Illustration of CRUD functionality in Postman<br />  
+<br /> 
+
+### Creating a new customer account
+
+### Displaying all customer accounts
+
+The image below shows the same list of customers in the H2 database used during testing
+
+The image below shows the same list of customers in a MySQL database used by the end customer (production version)
+
+### Display a specific customer account (using the customer ID of 2)

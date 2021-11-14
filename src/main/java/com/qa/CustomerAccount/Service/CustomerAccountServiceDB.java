@@ -63,7 +63,9 @@ public class CustomerAccountServiceDB implements CustomerAccountService{
 		//updating Name,email and DoB
 		existingAccount.setName(updateAccount.getName());
 		existingAccount.setEmail(updateAccount.getEmail());
-		existingAccount.setDoB(updateAccount.getDoB());
+		existingAccount.setDob(updateAccount.getDob());
+		existingAccount.setAddress(updateAccount.getAddress());
+		existingAccount.setPostcode(updateAccount.getPostcode());
 		
 		return this.repo.save(existingAccount) ;
 	}

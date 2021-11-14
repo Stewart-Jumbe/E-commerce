@@ -3,36 +3,24 @@ package com.qa.CustomerAccount.Domain;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-import org.junit.jupiter.api.BeforeEach;
+
 import org.junit.jupiter.api.Test;
 
 class CustomerAccountUnitTest {
 
 	
-	CustomerAccount testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01");
-	CustomerAccount testCustomerAccountwID = new CustomerAccount(1,"John", "john@gmail.com","2000-01-01");
-
-//	@BeforeEach
-//	void init() {
-//	CustomerAccount testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01");
-//	CustomerAccount testCustomerAccountwID = new CustomerAccount("John", "john@gmail.com","2000-01-01");
-//	}
-//	
+	CustomerAccount testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01", "27 Groove Hill,Bristol","BS4 9AY");
+	CustomerAccount testCustomerAccountwID = new CustomerAccount(1,"John", "john@gmail.com","2000-01-01", "27 Groove Hill,Bristol","BS4 9AY");
 	
 	
 	@Test // Testing Constructor  without ID
-	void testingCustomerAccountObject() {
-		// dont know why it doesnt work @BeforeEach doesnt work 
-		//testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01");
-		
+	void testingCustomerAccountObject() {	
 		assertTrue(testCustomerAccount instanceof CustomerAccount, "True");
 	}
 	
 	
 	@Test //Testing Constructor with ID
 	void testingCustomerAccountObjectID() {
-		
-		//testCustomerAccount = new CustomerAccount(1,"John", "john@gmail.com","2000-01-01");
 		
 		assertTrue(testCustomerAccountwID instanceof CustomerAccount, "True");
 	}
@@ -58,8 +46,9 @@ class CustomerAccountUnitTest {
 	}
 	
 	
-	//CustomerAccount testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01");
-	
+	//CustomerAccount testCustomerAccount = new CustomerAccount("John", "john@gmail.com","2000-01-01", "27 Groove Hill,Bristol","BS4 9AY");
+	//CustomerAccount testCustomerAccountwID = new CustomerAccount(1,"John", "john@gmail.com","2000-01-01", "27 Groove Hill,Bristol","BS4 9AY");
+
 	@Test
 	public void testSetId() {
 		
@@ -93,16 +82,35 @@ class CustomerAccountUnitTest {
 	
 	@Test
 	public void testGetDoB() {
-		assertEquals("2000-01-01", testCustomerAccountwID.getDoB());
+		assertEquals("2000-01-01", testCustomerAccountwID.getDob());
 	}
 	
 	@Test
 	public void testSetDoB() {
-		testCustomerAccountwID.setDoB("1992-01-01");
-		assertEquals("1992-01-01", testCustomerAccountwID.getDoB());
+		testCustomerAccountwID.setDob("1992-01-01");
+		assertEquals("1992-01-01", testCustomerAccountwID.getDob());
 	}
 	
-
+	@Test
+	public void testGetAddress() {
+		assertEquals("27 Groove Hill,Bristol", testCustomerAccountwID.getAddress());
+	}
 	
+	@Test
+	public void testSetAddress() {
+		testCustomerAccountwID.setAddress("30 Groove Hill");
+		assertEquals("30 Groove Hill", testCustomerAccountwID.getAddress());
+	}
+	
+	@Test
+	public void testGetPostcode() {
+		assertEquals("BS4 9AY", testCustomerAccountwID.getPostcode());
+	}
+	
+	@Test
+	public void testsetPostcode() {
+		testCustomerAccountwID.setPostcode("BA1 2AA");
+		assertEquals("BA1 2AA", testCustomerAccountwID.getPostcode());
+	}
 
 }

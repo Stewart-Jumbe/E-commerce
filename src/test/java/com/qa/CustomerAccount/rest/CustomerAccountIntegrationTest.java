@@ -41,14 +41,14 @@ public class CustomerAccountIntegrationTest {
 	//Testing CREATE
 	@Test
 	void testCreateCustomerAccount() throws Exception{
-			CustomerAccount requestBody = new CustomerAccount ("Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22"); // new instance of Customer Account
+			CustomerAccount requestBody = new CustomerAccount ("Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22","11 Blue leaf road, Bath","BA1 7AP"); // new instance of Customer Account
 			String requestBodyAsJSON = this.mapper.writeValueAsString(requestBody); // converting to JSON
 			
 			RequestBuilder request = post("/customeraccount/create").contentType(MediaType.APPLICATION_JSON)
 									.content(requestBodyAsJSON); // setting up the test request
 			
 			//Setting up expected response
-			CustomerAccount responseBody = new CustomerAccount(2,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22");
+			CustomerAccount responseBody = new CustomerAccount(2,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22","11 Blue leaf road, Bath","BA1 7AP");
 			String responseBodyAsJSON = this.mapper.writeValueAsString(responseBody); // converting to JSON
 			
 			ResultMatcher checkStatus = status().isCreated(); // checks if the status code is 201
@@ -60,7 +60,7 @@ public class CustomerAccountIntegrationTest {
 	//Testing READ
 	@Test
 	void testGetCustomerAccount() throws Exception {
-		final String responseBody = this.mapper.writeValueAsString(new CustomerAccount (1,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22"));
+		final String responseBody = this.mapper.writeValueAsString(new CustomerAccount (1,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22","11 Blue leaf road, Bath","BA1 7AP"));
 		this.mvc.perform(get("/customeraccount/get/1")).andExpect(status().isOk()).andExpect(content().json(responseBody));// performs the post request and checks for 200 status and expected body	
 	}
 	
@@ -68,7 +68,7 @@ public class CustomerAccountIntegrationTest {
 	@Test
 	void testGetAllCustomerAccounts () throws Exception {
 		
-		CustomerAccount customerAccounts= new CustomerAccount (1,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22"); //creating CustomerAccount variable
+		CustomerAccount customerAccounts= new CustomerAccount (1,"Stewart Jones","Stewart.Jones@gmail.com", "1992-01-22","11 Blue leaf road, Bath","BA1 7AP"); //creating CustomerAccount variable
 		List<CustomerAccount> CustomerAccountList = List.of(customerAccounts);
 	
 		String responseBody = this.mapper.writeValueAsString(CustomerAccountList);
@@ -84,7 +84,7 @@ public class CustomerAccountIntegrationTest {
 	//Testing UPDATE
 	@Test
 	void testUpdateCustomerAccount() throws Exception {
-		final String responseBody = this.mapper.writeValueAsString(new CustomerAccount(1,"Jordan Rice","Jordan.Rice@gmail.com", "2000-01-22"));
+		final String responseBody = this.mapper.writeValueAsString(new CustomerAccount(1,"Jordan Rice","Jordan.Rice@gmail.com","2000-01-22","22 Rock road, Bath","BA7 7PP"));
 		
 		RequestBuilder request = put("/customeraccount/replace/1").contentType(MediaType.APPLICATION_JSON).content(responseBody);
 		

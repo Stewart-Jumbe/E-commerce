@@ -38,8 +38,8 @@ class CustomerAccountServiceDBUnitTest {
 	void testCreateCustomerAccountMeth() {
 		
 		//GIVEN
-		CustomerAccount newCustomerAccount = new CustomerAccount("Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
-		CustomerAccount savedCustomerAccount = new CustomerAccount(id,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
+		CustomerAccount newCustomerAccount = new CustomerAccount("Gon Freaks", "G.Freaks@gmail.com", "2000-01-01","26 Phil Street, York New","BA1 2LZ");
+		CustomerAccount savedCustomerAccount = new CustomerAccount(id,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01","26 Phil Street, York New","BA1 2LZ");
 		
 		//WHEN
 		Mockito.when(this.repo.save(newCustomerAccount)).thenReturn(savedCustomerAccount);
@@ -71,7 +71,7 @@ class CustomerAccountServiceDBUnitTest {
 	void testgetAllCustomerAccounts() {
 	
 		//GIVEN
-		CustomerAccount testCustomerAccount = new CustomerAccount(null,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
+		CustomerAccount testCustomerAccount = new CustomerAccount(null,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01","26 Phil Street, York New","BA1 2LZ");
 		testCustomerAccount.setId(id);
 		//Creating list to contain test account
 		List<CustomerAccount> customerAccountList = List.of(testCustomerAccount);
@@ -89,7 +89,7 @@ class CustomerAccountServiceDBUnitTest {
 	
 	@Test // Testing READ by ID
 	void testgetCustomerAccount() {
-	CustomerAccount expectedCustomerAccount = new CustomerAccount(null,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
+	CustomerAccount expectedCustomerAccount = new CustomerAccount(null,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01","26 Phil Street, York New","BA1 2LZ");
 	
 	//WHEN
 	Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(expectedCustomerAccount));
@@ -109,12 +109,15 @@ class CustomerAccountServiceDBUnitTest {
 		
 		//GIVEN
 		Integer id = 1;
-		CustomerAccount newAccount = new CustomerAccount(1,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01");
-		CustomerAccount existingAccount = new CustomerAccount(id,"Random Lee","Random.Lee@gone.com","2070-11-11");
+		CustomerAccount newAccount = new CustomerAccount(1,"Gon Freaks", "G.Freaks@gmail.com", "2000-01-01","26 Phil Street, York New","BA1 2LZ");
+		CustomerAccount existingAccount = new CustomerAccount(id,"Random Lee","Random.Lee@gone.com","2070-11-11","30 Phil Street, York New","BA1 2LZ" );
 		CustomerAccount updatedAccount = new CustomerAccount(id,
 															newAccount.getName(),
 															newAccount.getEmail(), 
-															newAccount.getDoB());
+															newAccount.getDob(),
+															newAccount.getAddress(),
+															newAccount.getPostcode()
+															);
 		
 		System.out.println("This is the updated account: "+ updatedAccount);
 		//WHEN
