@@ -94,7 +94,37 @@ CREATE TABLE `customer_account`(
 ## Illustration of CRUD functionality in Postman<br />  
 <br /> 
 
+A new customer account can be created by using the **/customeracount/create** extension.<br>
+To succefully This request requires providing input data inside Postman Body in specified format.
+
+###### Using Postman:
+
+1. Open a new Postman tab
+2. Select `POST` request from drop-down list
+3. Enter URL: http://localhost:8080/customeraccount/create
+4. Select `Body` -> `raw` (to the right of the `raw`, select `JSON` type is from the drop-down list)
+5. Enter input body (example shown below). <br>
+```
+{       "name": "Anna Will",
+        "email": "Hiram_Feest@example.net",
+        "dob": "11-01-1991",
+        "address": "91793 Miller Trafficway",
+        "postcode": "BA1 3AA"
+}
+```
+Random customer data can be generated for the name, email and address fields by entering the following:
+
+```
+{      "name": "{{$randomFullName",
+        "email": "{{$randomEmail}}",
+        "dob": "11-01-1991",
+        "address": "{{$randomStreetAddress}}",
+        "postcode": "BA1 3AA"
+}
+```
+
 ### Creating a new customer account
+
 
 ### Displaying all customer accounts
 
