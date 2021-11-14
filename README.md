@@ -1,10 +1,8 @@
 # Ecommerce App – DfE Final Project 
+
+
+## Project Overview<br /> 
 <br /> 
-<br /> 
-
-
-## Project Overview
-
 This repository contains the final project for QA Academy bootcamp and Software Development program. <br>
 The e-commerce application created has full crud functionality, handles HTTP requests and connects to a persistent relational database.
 It encapsulates concepts from all core modules:
@@ -80,8 +78,7 @@ The e-commerce app has CRUD functionality which allows the user to do the follow
 
 As this project focused on developing the back-end, users of the app can use Postman which simulates the fuctionality of a front-end.
 
-## Jira
-
+## Jira<br /> 
 Jira was used to manage this project, my Jira board can be accessed [here](https://sjumbe.atlassian.net/jira/software/projects/MUS/boards/1/roadmap?shared=&atlOrigin=eyJpIjoiNDU1ODZhN2YzMjgxNDFmMjhmNDc3NWY2NDk5YjJkZGUiLCJwIjoiaiJ9), a project risk asssessment can be found on the board. 
 
 ## Installation
