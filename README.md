@@ -125,11 +125,50 @@ Random customer data can be generated for the name, email and address fields by 
 
 ### Creating a new customer account
 
+Postman url:  http://localhost:8080/customeraccount/create
+
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Creating%20CustomerAccount.png)
 
 ### Displaying all customer accounts
 
+Postman url:  http://localhost:8080/customeraccount/getall
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Getting%20all%20customers.png)
+
 The image below shows the same list of customers in the H2 database used during testing
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/H2%20database%20of%20Created%20All%20accounts.png)
 
 The image below shows the same list of customers in a MySQL database used by the end customer (production version)
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/H2%20database%20of%20Created%20All%20accounts.png)
 
 ### Display a specific customer account (using the customer ID of 2)
+
+Postman url: http://localhost:8080/customeraccount/get/2
+
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Get%20by%20Customer%20ID.png)
+
+### Updating a specific customer account (using the customer ID of 1)
+
+Postman url: http://localhost:8080/customeraccount/replace/1
+
+Image below shows the account of Howard having its data replaced/updated 
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Replacing%20Howard%20West%20with%20Stewart%20Right.png)
+
+Image showing a confirmation of the replacement of Howard's account with Stewart was shown the Eclipse console
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/console%20confirmation%20of%20replacement%20of%20howard.png)
+
+### Deleting a specific customer account (using the customer ID of 1)
+
+Postman url:http://localhost:8080/customeraccount/delete/1
+
+Image below shows the account Eclipse console output when the account of Stewart was deleted 
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Confirmation%20of%20deletion%20of%20customer%20with%20id%201.png)
+
+## Test coverage<br />  
+<br /> 
+
+Unit and intergration testing were performed, the output of the test coverage is shown below. The tests covered above 80% of the applications code.
+![img.png](https://github.com/Stewart-Jumbe/Ecommerce/blob/main/Documentation/Testing%20Coverage.png)
+
+
+
+
