@@ -5,7 +5,8 @@
 <br /> 
 This repository contains the final project for QA Academy bootcamp and Software Development program. <br>
 The e-commerce application created has full crud functionality, handles HTTP requests and connects to a persistent relational database.
-It encapsulates concepts from all core modules:
+It encapsulates concepts from all core modules:<br /> 
+
 * Agile & Project Management (Git, Jira)
 
 * Databases & Cloud Fundamentals (H2, MySQL)
